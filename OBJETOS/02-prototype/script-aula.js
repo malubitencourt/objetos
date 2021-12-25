@@ -1,47 +1,53 @@
-function Carro(marcaAtribuida, precoAtribuida){
-  this.marca = marcaAtribuida;
-  this.preco = precoAtribuida;
-};
+//PROTOTYPE
+// A propriedade prototype é um objeto adicionado a uma função quando a mesma é criada.
+function Pessoa(nome, idade) { 
+  this.nome = nome;
+  this.idade = idade;
+}
 
-const upTsi = new Carro();
-upTsi.marca = 'volkswagem';
-upTsi.preco = 40000;
-const palio = new Carro();
-palio.marca = 'fiat';
-palio.preco = 30000;
+//FUNCAO.PROTOTYPE
+Pessoa.prototype.andar = function() { // É possível adicionar novas propriedades e métodos ao objeto prototype.
+  return this.nome + ' andou';
+}
+Pessoa.prototype.nadar = function() {
+  return this.nome + ' nadou';
+}
 
+const malu = new Pessoa('malu', 28);
 
-function Caminhao(marca, precoInicial){
-  const taxa = 1.2;
-  const precoFinal = precoInicial * taxa;
-  this.marca = marca;
-  this.preco = precoFinal;
-};
+// console.log(Pessoa.prototype); // retorna o objeto
+// console.log(malu.prototype); // undefined 
 
-const scania = new Caminhao('Scania', 300000);
+// CONSTRUTORES NATIVOS
+//Objetos, Funções, Números, Strings e outros tipos de dados são criados utilizando construtores. Esses construtores possuem um protótipo com propriedades e métodos, que poderão ser acessadas pelo tipo de dado.
 
+const pais = 'Brasil';
+const cidade = new String('Recife');
 
-// const DOM = {
-//   selector: 'li',
-//   element() {
-//     return document.querySelector(this.selector);
-//   },
-//   ativar() {
-//     this.element().classList.add('ativar');
-//   }
-// };
+//É POSSÍVEL ACESSAR A FUNÇÃO DO PROTÓTIPO
+// É comum, principalmente em códigos mais antigos, o uso direto de funções do protótipo do construtor Array.
 
-function DOM(selector) {
-  this.element = function() {
-    return document.querySelector(selector);
-  },
-  this.ativar = function(classe) {
-    this.element().classList.add(classe);
+const lista = document.querySelectorAll('li');
+
+//transforma em um array
+const listaArray1 = Array.prototype.slice.call(lista);
+const listaArray2 = Array.from(lista);
+
+// ENTENDA O QUE ESTÁ SENDO RETORNADO
+// Os métodos e propriedades acessado com o . são referentes ao tipo de dados que é retornado antes desse .
+const Carro = {
+  marca: 'Ford',
+  modelo: 'Ka',
+  preco: 20000,
+  andar() {
+    return true;
   }
 };
 
-const li = new DOM('li');
-const ul = new DOM('ul');
-
-const lastLi = new DOM('li:last-child');
-lastLi.ativar('ativo')
+// Carro // Object
+// Carro.marca // String
+// Carro.preco // Number
+// Carro.acelerar // Function
+// Carro.acelerar() // Boolean
+// Carro.marca.charAt // Function
+// Carro.marca.charAt(0) // String
