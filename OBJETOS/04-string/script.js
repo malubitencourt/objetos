@@ -89,3 +89,14 @@
 // listaItens = listaItens.replace(/[ ]+/g,', ');
 
 // console.log(listaItens)
+
+
+// STR.SPLIT(PADRAO)
+// Divide a string de acordo com o padrão passado e retorna uma array.
+// let arrayLista = listaItens.split('s  ')
+// console.log(arrayLista)
+
+const htmlText = '<div>O melhor item</div><div>A melhor lista</div>';
+const htmlArray = htmlText.split('div')
+
+console.log(htmlArray)
