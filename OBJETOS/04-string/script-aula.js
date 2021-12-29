@@ -1,7 +1,5 @@
 // STRING
 // É a construtora de strings, toda string possui as propriedades e métodos do prototype de String.
-
-
 // const comida = 'pizza';
 // const liquido = new String('Água');
 
@@ -96,7 +94,33 @@
 // let arrayLista = listaItens.split('s  ')
 // console.log(arrayLista)
 
-const htmlText = '<div>O melhor item</div><div>A melhor lista</div>';
-const htmlArray = htmlText.split('div')
+// const htmlText = '<div>O melhor item</div><div>A melhor lista</div>';
+// const htmlArray = htmlText.split('div');
+// const htmlNovo = htmlArray.join('section');
 
-console.log(htmlArray)
+// console.log(htmlText);
+// console.log(htmlArray);
+// console.log(htmlNovo);
+
+// join é um método de Array
+
+
+// STR.TOLOWERCASE() E STR.TOUPPERCASE()
+// Retorna a string em letras maiúsculas ou minúsculas. Bom para verificarmos input de usuários.
+
+// const sexo1 = 'Feminino';
+// const sexo3 = 'feminino';
+// const sexo2 = 'FEMININO';
+
+// console.log(sexo1.toLowerCase() === 'feminino'); //true
+// console.log(sexo2.toUpperCase() === 'FEMININO'); //true
+// console.log(sexo3.toLowerCase() === 'feminino'); //true
+
+// STR.TRIM(), STR.TRIMSTART(), STR.TRIMEND()
+// Remove espaço em branco do início ou final de uma string.
+
+// const valor = ' R$ 23.00 '
+
+// console.log(valor.trim()); //'R$ 23.00'
+// console.log(valor.trimStart()); //'R$ 23.00 '
+// console.log(valor.trimEnd()); //' R$ 23.00'
